@@ -1,0 +1,223 @@
+/*--------------------------- IMPORT FONT ---------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*--------------------------- MEU ROOT COLOR ---------------------------*/
+:root {
+  --bg-principal: #020b14;
+  --bg-secundario: #031c2f;
+  --azul: #00bfff;
+  --azul-suave: #0aa1e8;
+  --texto: #cfd8dc;
+  --texto-fraco: #90a4ae;
+  --borda: rgba(0,191,255,0.2);
+  --transicao: 0.3s ease;
+  --font-principal: 'Poppins', sans-serif;
+}
+
+/*--------------------------- RESET & FONT GLOBAL ---------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-principal);
+}
+
+body {
+  background: var(--bg-principal);
+  color: var(--texto);
+}
+
+/*--------------------------- CONTAINER ---------------------------*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/*--------------------------- TÍTULO DE SEÇÃO ---------------------------*/
+.titulo-secao {
+  text-align: center;
+  color: var(--azul);
+  font-size: 2.4rem;
+  position: relative;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+
+.titulo-secao::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--azul);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/*--------------------------- PARÁGRAFO ---------------------------*/
+p.intro {
+  text-align: justify;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  color: var(--texto-fraco);
+  line-height: 1.7;
+}
+
+/*--------------------------- CONTACTOS ---------------------------*/
+.contactos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.contactos > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-secundario);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  transition: var(--transicao);
+}
+
+.contactos > div:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--azul);
+  box-shadow: 0 12px 30px rgba(0,191,255,0.2);
+}
+
+.contactos i {
+  font-size: 2.5rem;
+  color: var(--azul);
+  margin-bottom: 15px;
+  transition: var(--transicao);
+}
+
+.contactos i:hover {
+  color: var(--azul-suave);
+}
+
+.contactos h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contactos p {
+  color: var(--texto-fraco);
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/*--------------------------- FORMULÁRIO ---------------------------*/
+.formulario {
+  background: var(--bg-secundario);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--borda);
+  max-width: 100%;
+  margin: 0 auto 60px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--borda);
+  background: var(--bg-principal);
+  color: var(--texto);
+  font-size: 0.95rem;
+}
+
+.formulario textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formulario button {
+  background: var(--azul);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.formulario button:hover {
+  background: var(--azul-suave);
+}
+
+/*--------------------------- RESPONSIVIDADE ---------------------------*/
+@media (max-width: 992px) {
+  .container {
+    padding: 30px 20px;
+  }
+  h2.titulo-secao {
+    font-size: 2.2rem;
+  }
+  p.intro {
+    max-width: 90%;
+  }
+  .formulario {
+    padding: 25px;
+  }
+  .contactos i {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 25px 15px;
+  }
+  .contactos {
+    grid-template-columns: 1fr;
+  }
+  h2.titulo-secao {
+    font-size: 2rem;
+  }
+  .contactos i {
+    font-size: 2rem;
+  }
+  .formulario {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 10px;
+  }
+  h2.titulo-secao {
+    font-size: 1.8rem;
+  }
+  p.intro {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .contactos i {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .formulario input,
+  .formulario textarea {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+  .formulario button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}

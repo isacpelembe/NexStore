@@ -1,0 +1,221 @@
+/*--------------------------- IMPORT FONT ---------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*--------------------------- MEU ROOT COLOR ---------------------------*/
+:root {
+  --bg-principal: #020b14;
+  --bg-secundario: #031c2f;
+  --azul: #00bfff;
+  --azul-suave: #0aa1e8;
+  --texto: #cfd8dc;
+  --texto-fraco: #90a4ae;
+  --borda: rgba(0,191,255,0.2);
+  --transicao: 0.3s ease;
+  --font-principal: 'Poppins', sans-serif;
+}
+
+/*--------------------------- RESET & FONT GLOBAL ---------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-principal);
+}
+
+/*--------------------------- SOBRE NÓS ---------------------------*/
+.about {
+  background: var(--bg-principal);
+  color: var(--texto);
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: var(--azul);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.about h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--azul);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.about-text {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+  line-height: 1.7;
+  color: var(--texto-fraco);
+  text-align: justify;
+}
+
+/*--------------------------- MISSÃO, VISÃO E VALORES ---------------------------*/
+.cards {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(145deg, rgba(3,28,47,0.9), rgba(2,11,20,0.95));
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 30px 25px;
+  position: relative;
+  transition: var(--transicao);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,191,255,0.15), transparent 60%);
+  opacity: 0;
+  transition: var(--transicao);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--azul);
+  box-shadow: 0 15px 40px rgba(0,191,255,0.2);
+}
+
+.card i {
+  font-size: 2.4rem;
+  color: var(--azul);
+  margin-bottom: 15px;
+  transition: var(--transicao);
+}
+
+.card:hover i {
+  transform: scale(1.2) rotate(5deg);
+  color: var(--azul-suave);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--texto-fraco);
+  line-height: 1.6;
+  text-align: justify;        
+  max-width: 300px;          
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--azul), transparent);
+  opacity: 0;
+  transition: var(--transicao);
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/*--------------------------- RESPONSIVIDADE ---------------------------*/
+@media (max-width: 1200px) {
+  .about {
+    padding: 70px 20px;
+  }
+  .about h2 {
+    font-size: 2.2rem;
+  }
+  .card {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about {
+    padding: 60px 15px;
+  }
+  .about h2 {
+    font-size: 2rem;
+  }
+  .card {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .card i {
+    font-size: 2rem;
+  }
+  .card h3 {
+    font-size: 1.3rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 50px 10px;
+  }
+  .about h2 {
+    font-size: 1.8rem;
+  }
+  .card {
+    padding: 20px 15px;
+  }
+  .card i {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .card h3 {
+    font-size: 1.2rem;
+  }
+  .card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}

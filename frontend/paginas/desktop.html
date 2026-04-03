@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/smarthead.css">
+  <link rel="icon" type="image/png" href="../logotipo/Icon.png" />
+  <title>DeskTop Gamer | NexStore</title>
+</head>
+<body>
+
+<!--------------------------- AREA DO HEADER --------------------------->
+  <header class="cabecalho-principal">
+    <div class="container-cabecalho">
+
+        <!--------------------------- TOGGLE MOBILE MENU --------------------------->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+      <div class="container-logo">
+        <a href="../index.html"><img src="../logotipo/Logo04.png" class="logo-img"></a>
+      </div>
+
+      <nav class="menu">
+        <a href="../index.html">Início</a>
+        <a href="../paginas/contactos.html">Contactos</a>
+        <div class="dropdown">
+          <span>Produtos <i class="fas fa-chevron-down"></i></span>
+          <div class="dropdown-menu">
+            <a href="../paginas/desktop.html"><i class="fas fa-desktop"></i> DeskTop</a>
+            <a href="../paginas/headset.html"><i class="fas fa-headphones"></i> HeadSet</a>
+            <a href="../paginas/laptop.html"><i class="fas fa-laptop"></i> Laptop</a>
+            <a href="../paginas/musicbox.html"><i class="fa-solid fa-music"></i> MusicBox</a>
+            <a href="../paginas/smartphone.html"><i class="fas fa-mobile-alt"></i> SmartPhone</a>
+            <a href="../paginas/smartwatch.html"><i class="fa-solid fa-stopwatch"></i> SmartWatch</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span>Serviços <i class="fas fa-chevron-down"></i></span>
+          <div class="dropdown-menu">
+            <a href="../paginas/importacao.html"><i class="fas fa-truck"></i> Importação</a>
+            <a href="../paginas/manutencao.html"><i class="fas fa-tools"></i> Manutenção</a>
+          </div>
+        </div>
+        <a href="../paginas/sobre-nos.html">Sobre Nós</a>
+      </nav>
+
+      <div class="search-box">
+  <input type="text" id="searchInput" placeholder="Pesquisar...">
+  <i class="fas fa-search"></i>
+  </div>
+
+  <div id="searchPopup" class="popup-404">
+  <div class="popup-404-box">
+    <h1>Ops...</h1>
+    <h2>Não encontramos esse produto</h2>
+    <p>Tente pesquisar com outro nome ou explore os produtos disponíveis na loja.</p>
+
+    <div class="popup-actions">
+      <a href="../frontend/index.html" class="btn-explorar">
+        Ver produtos
+      </a>
+      <button onclick="fecharPopup404()" class="btn-fechar">
+        Fechar
+      </button>
+    </div>
+  </div>
+</div>
+
+      <div class="acoes">
+  <button class="btn-user"><i class="fas fa-user"></i></button>
+
+  <div class="cart-container">
+  <button class="btn-cart">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count">0</span>
+  </button>
+
+  <div class="cart-popup">
+    <h3>Seu Carrinho</h3>
+    <ul class="cart-items">
+      <!-- Produtos adicionados dinamicamente aqui -->
+    </ul>
+
+    <div class="cart-coupon">
+      <input type="text" placeholder="Código do cupom" id="couponInput">
+      <button id="applyCoupon">Aplicar</button>
+      <span class="coupon-message"></span>
+    </div>
+
+    <div class="cart-total">
+      Total: <span class="cart-total-value">0 MT</span>
+    </div>
+
+    <button class="checkout-btn">Pagar Agora</button>
+    <p class="empty-cart">Seu carrinho está vazio</p>
+  </div>
+</div>
+</div>
+    </div>
+  </header>
+
+<!-- --------------- SMARTHEAD MODERNO --------------- -->
+<section class="smarthead">
+  <div class="edu-slides">
+    <div class="edu-slide s1" style="background-image: url('../produtos/desktop/PC01.webp');"></div>
+    <div class="edu-slide s2" style="background-image: url('../produtos/desktop/PC02.webp');"></div>
+    <div class="edu-slide s3" style="background-image: url('../produtos/desktop/PC03.webp');"></div>
+  </div>
+
+  <canvas id="tech-smart"></canvas>
+
+  <div class="edu-overlay"></div>
+
+  <div class="edu-content">
+    <span class="edu-eyebrow">Está em</span>
+    <h1>DeskTop Gamer</h1>
+    <nav class="edu-breadcrumb">
+      <a href="../index.html">Início</a>
+      <span>/</span>
+      <strong>Desktop</strong>
+    </nav>
+  </div>
+</section>
+
+<body>
+<!--------------------------- AREA DOS PRODUTOS --------------------------->
+<section class="produtos-container">
+  <div class="produtos-grid">
+    <div class="card-produto" data-nome="Alienware Aurora R15" data-preco="≈ 300 000 MT" data-imagem="Produtos/Desktop/Alienware Aurora R15.jpg">
+  <img src="../produtos/desktop/PC01.webp">
+  <h3>Alienware Aurora R15</h3>
+  <div class="preco">≈ 300 000 MT</div>
+  <div class="quantidade" data-quantidade="50">Qtd: 50</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Corsair Vengeance i7200" data-preco="≈ 280 000 MT" data-imagem="Produtos/Desktop/Corsair Vengeance i7200.jpg">
+  <img src="../produtos/desktop/PC02.webp">
+  <h3>Corsair Vengeance i7200</h3>
+  <div class="preco">≈ 280 000 MT</div>
+  <div class="quantidade" data-quantidade="60">Qtd: 60</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="HP Omen 45L" data-preco="≈ 270 000 MT" data-imagem="Produtos/Desktop/HP Omen 45L.jpg">
+  <img src="../produtos/desktop/PC03.webp">
+  <h3>HP Omen 45L</h3>
+  <div class="preco">≈ 270 000 MT</div>
+  <div class="quantidade" data-quantidade="55">Qtd: 55</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="MSI MEG Trident X" data-preco="≈ 290 000 MT" data-imagem="Produtos/Desktop/MSI MEG Trident X.jpg">
+  <img src="../produtos/desktop/PC04.webp">
+  <h3>MSI MEG Trident X</h3>
+  <div class="preco">≈ 290 000 MT</div>
+  <div class="quantidade" data-quantidade="45">Qtd: 45</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="ASUS ROG Strix GA35" data-preco="≈ 310 000 MT" data-imagem="Produtos/Desktop/ASUS ROG Strix GA35.jpg">
+  <img src="../produtos/desktop/PC05.jpg">
+  <h3>ASUS ROG Strix GA35</h3>
+  <div class="preco">≈ 310 000 MT</div>
+  <div class="quantidade" data-quantidade="40">Qtd: 40</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="CyberPowerPC Gamer Supreme" data-preco="≈ 260 000 MT" data-imagem="Produtos/Desktop/CyberPowerPC Gamer Supreme.jpg">
+  <img src="../produtos/desktop/PC06.jpg">
+  <h3>CyberPowerPC Gamer Supreme</h3>
+  <div class="preco">≈ 260 000 MT</div>
+  <div class="quantidade" data-quantidade="70">Qtd: 70</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="iBUYPOWER Element 9260" data-preco="≈ 250 000 MT" data-imagem="Produtos/Desktop/iBUYPOWER Element 9260.jpg">
+  <img src="../produtos/desktop/PC07.webp">
+  <h3>iBUYPOWER Element 9260</h3>
+  <div class="preco">≈ 250 000 MT</div>
+  <div class="quantidade" data-quantidade="65">Qtd: 65</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="SkyTech Blaze II" data-preco="≈ 240 000 MT" data-imagem="Produtos/Desktop/SkyTech Blaze II.jpg">
+  <img src="../produtos/desktop/PC08.jpg">
+  <h3>SkyTech Blaze II</h3>
+  <div class="preco">≈ 240 000 MT</div>
+  <div class="quantidade" data-quantidade="75">Qtd: 75</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="NZXT Streaming PC" data-preco="≈ 230 000 MT" data-imagem="Produtos/Desktop/NZXT Streaming PC.jpg">
+  <img src="../produtos/desktop/PC09.jpg">
+  <h3>NZXT Streaming PC</h3>
+  <div class="preco">≈ 230 000 MT</div>
+  <div class="quantidade" data-quantidade="60">Qtd: 60</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Digital Storm Aventum X" data-preco="≈ 320 000 MT" data-imagem="Produtos/Desktop/Digital Storm Aventum X.jpg">
+  <img src="../produtos/desktop/PC10.jpg">
+  <h3>Digital Storm Aventum X</h3>
+  <div class="preco">≈ 320 000 MT</div>
+  <div class="quantidade" data-quantidade="35">Qtd: 35</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Dell Alienware Aurora R14" data-preco="≈ 295 000 MT" data-imagem="Produtos/Desktop/Dell Alienware Aurora R14.jpg">
+  <img src="../produtos/desktop/PC04.webp">
+  <h3>Dell Alienware Aurora R14</h3>
+  <div class="preco">≈ 295 000 MT</div>
+  <div class="quantidade" data-quantidade="50">Qtd: 50</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="ASUS ROG Huracan G21" data-preco="≈ 285 000 MT" data-imagem="Produtos/Desktop/ASUS ROG Huracan G21.jpg">
+  <img src="../produtos/desktop/PC01.webp">
+  <h3>ASUS ROG Huracan G21</h3>
+  <div class="preco">≈ 285 000 MT</div>
+  <div class="quantidade" data-quantidade="55">Qtd: 55</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+  </div>
+</section>
+
+<!--------------------------- AREA DO CADASTRO --------------------------->
+  <div class="popup-auth" id="popupAuth">
+    <div class="auth-container">
+      <div class="auth-overlay" id="authOverlay">
+        <div class="overlay-content">
+          <h2 id="overlayTitle">Bem-vindo!</h2>
+          <p id="overlayText">Ainda não tens conta?</p>
+          <button id="toggleAuth">Registrar</button>
+        </div>
+      </div>
+
+      <div class="auth-box login-box">
+        <h2>Entrar</h2>
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Palavra-passe">
+        <button>Login</button>
+        <p>ou entrar com:</p>
+        <button class="btn-google"><i class="fab fa-google"></i> Google</button>
+      </div>
+
+      <div class="auth-box register-box">
+        <h2>Registrar</h2>
+        <input type="text" placeholder="Nome Completo">
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Palavra-passe">
+        <input type="password" placeholder="Confirmar senha">
+        <button>Criar Conta</button>
+        <p>ou registar com:</p>
+        <button class="btn-google"><i class="fab fa-google"></i> Google</button>
+      </div>
+    </div>
+  </div>
+
+<!--------------------------- AREA NEWSLETTER --------------------------->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+
+    <div class="newsletter-text">
+      <h2>Newsletter NexStore</h2>
+      <p class="subtitle">
+        Conecte-se ao futuro com tecnologia inovadora
+      </p>
+      <p class="desc">
+        Receba ofertas, novidades e produtos exclusivos diretamente no seu e-mail.
+      </p>
+    </div>
+
+    <div class="newsletter-form">
+      <input type="email" placeholder="Insira o seu e-mail">
+      <button>INSCREVER-SE</button>
+
+      <label class="terms">
+        <input type="checkbox">
+        Concordo com os <a href="#">Termos e Condições</a>
+      </label>
+    </div>
+
+  </div>
+</section>
+
+<!-------------- AREA BACKTOTOP -------------->
+<button class="backToTop">
+  <svg class="progress-circle" width="40" height="40">
+    <circle cx="20" cy="20" r="18"></circle>
+    <circle cx="20" cy="20" r="18"></circle>
+  </svg>
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!--------------------------- AREA FOOTER --------------------------->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-sobre">
+      <img src="../logotipo/Logo04.png" class="footer-logo">
+      <p>
+        A NexStore é a sua loja online de tecnologia, onde você explora tudo ao seu gosto. Oferecemos os melhores produtos
+        com garantia, qualidade, inovação e entrega segura em qualquer ponto de Moçambique.
+      </p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/nexstore"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/nexstore"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/nexstore"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/nexstore"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-pages">
+      <h3>Links Rápidos</h3>
+      <ul>
+        <li><a href="../paginas/contactos.html">Contactos</a></li>
+        <li><a href="../paginas/produtos.html">Produtos</a></li>
+        <li><a href="../paginas/servicos.html">Serviços</a></li>
+        <li><a href="../paginas/sobre-nos.html">Sobre Nós</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-categorias">
+      <h3>Categorias</h3>
+      <ul>
+        <li><a href="../paginas/eletrodomesticos.html">Eletronicos</a></li>
+        <li><a href="../paginas/smartphone.html">Smartphones</a></li>
+        <li><a href="../paginas/laptop.html">Laptops</a></li>
+        <li><a href="../paginas/headset.html">Headsets</a></li>
+        <li><a href="../paginas/desktop.html">Desktops</a></li>
+        <li><a href="../paginas/smartwatch.html">SmartWatchs</a></li>
+      </ul>
+    </div>
+
+    <div class="contactos-footer">
+      <h3>Contactos</h3>
+      <div class="footer-item">
+        <i class="fas fa-phone"></i>
+        <div class="footer-info">
+          <p><a href="tel:+258846686990">+258 846686990</a></p>
+          <p><a href="tel:+258876686990">+258 876686990</a></p>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <i class="fas fa-envelope"></i>
+        <div class="footer-info">
+          <p><a href="mailto:contacto@nexstore.co.mz">contacto@nexstore.co.mz</a></p>
+          <p><a href="mailto:suporte@nexstore.co.mz">suporte@nexstore.co.mz</a></p>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="footer-info">
+          <p>Baixa da Cidade, Maputo</p>
+          <p>Moçambique</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Copyright ©2026 <a href="../index.html">NexStore</a> | Todos os Direitos Reservados.</p>
+  </div>
+</footer>
+<!--------------------------- JAVASCRIPT --------------------------->
+  <script src="../js/script.js"></script>
+  <script src="../js/produtos.js"></script>
+  <script src="../js/carinha.js"></script>
+  <script src="../js/pesquisar.js"></script>
+  <script src="../js/backToTop.js"></script>
+  <script src="../js/smarthead.js"></script>
+</body>
+</html>

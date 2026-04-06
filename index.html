@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="icon" type="image/png" href="logotipo/Icon.png" />
+  <title>NexStore - Sua Loja de Tecnologia</title>
+</head>
+<body>
+<!--------------------------- AREA DO HEADER --------------------------->
+  <header class="cabecalho-principal">
+    <div class="container-cabecalho">
+
+<!--------------------------- TOGGLE MOBILE MENU --------------------------->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+      <div class="container-logo">
+        <a href="index.html"><img src="logotipo/Logo04.png" class="logo-img"></a>
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="paginas/contactos.html">Contactos</a>
+        <div class="dropdown">
+          <span>Produtos <i class="fas fa-chevron-down"></i></span> 
+          <div class="dropdown-menu">
+            <a href="paginas/desktop.html"><i class="fas fa-desktop"></i> DeskTop</a>
+            <a href="paginas/headset.html"><i class="fas fa-headphones"></i> HeadSet</a>
+            <a href="paginas/laptop.html"><i class="fas fa-laptop"></i> Laptop</a>
+            <a href="paginas/musicbox.html"><i class="fa-solid fa-music"></i> MusicBox</a>
+            <a href="paginas/smartphone.html"><i class="fas fa-mobile-alt"></i> SmartPhone</a>
+            <a href="paginas/smartwatch.html"><i class="fa-solid fa-stopwatch"></i> SmartWatch</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span>Serviços <i class="fas fa-chevron-down"></i></span>
+          <div class="dropdown-menu">
+            <a href="paginas/importacao.html"><i class="fas fa-truck"></i> Importação</a>
+            <a href="paginas/manutencao.html"><i class="fas fa-tools"></i> Manutenção</a>
+          </div>
+        </div>
+        <a href="paginas/sobre-nos.html">Sobre Nós</a>
+      </nav>
+
+<!--------------------------- PESQUISAR PRODUTOS --------------------------->
+      <div class="search-box">
+  <input type="text" id="searchInput" placeholder="Pesquisar...">
+  <i class="fas fa-search"></i>
+  </div>
+
+  <div id="searchPopup" class="popup-404">
+  <div class="popup-404-box">
+    <h1>Ops...</h1>
+    <h2>Não encontramos esse produto</h2>
+    <p>Tente pesquisar com outro nome ou explore os produtos disponíveis na loja.</p>
+
+    <div class="popup-actions">
+      <a href="index.html" class="btn-explorar">
+        Ver produtos
+      </a>
+      <button onclick="fecharPopup404()" class="btn-fechar">
+        Fechar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--------------------------- AREA DO USUÁRIO E CARRINHO --------------------------->
+<div class="acoes">
+  <button class="btn-user"><i class="fas fa-user"></i></button>
+
+  <div class="cart-container">
+    <button class="btn-cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span>
+    </button>
+
+    <div class="cart-popup">
+      <h3>Seu Carrinho</h3>
+
+      <ul class="cart-items"></ul>
+
+      <div class="cart-summary">
+        <p>Total</p>
+        <span class="cart-total-value">0 MT</span>
+      </div>
+
+      <div class="payment-method">
+        <select id="paymentSelect">
+          <label for="paymentSelect">Escolha Forma de Pagar:</label>
+          <option value="mpesa">M-Pesa</option>
+          <option value="emola">E-Mola</option>
+          <option value="mkesh">mKesh</option>
+        </select>
+      </div>
+
+      <div class="cart-actions">
+        <button class="checkout-btn"><i class="fa-solid fa-bag-shopping"></i> Confirmar Pagamento</button>
+      </div>
+    </div>
+  </div>
+
+<div id="paymentPopup" class="payment-popup">
+  <div class="payment-popup-box">
+    <h2>Pagamento</h2>
+    <p>Insira seu número para concluir a transação:</p>
+    <input type="text" id="paymentNumber" placeholder="_________" maxlength="12">
+    <button id="confirmPaymentBtn">Confirmar Pagamento</button>
+    <button class="close-popup" onclick="closePaymentPopup()">×</button>
+  </div>
+</div>
+</div>
+    </div>
+  </header>
+
+<!--------------------------- AREA DO SLIDER --------------------------->
+  <main class="conteudo-principal">
+    <div class="area-slider">
+      <div class="slides">
+        <div class="slide active">
+          <div class="slide-inner">
+            <div class="slide-image"><img src="produtos/SmartWatch/apple-watch.png" alt="Smart Watch Series X"></div>
+            <div class="slide-content">
+              <span class="tag">NOVO LANÇAMENTO</span>
+              <h1>Smart Watch Series X</h1>
+              <p>Monitoramento completo de saúde, GPS integrado e bateria duradoura.</p>
+              <a href="#" class="btn"><i class="fa-solid fa-cart-arrow-down"></i> Comprar Agora</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-inner">
+            <div class="slide-image"><img src="produtos/Laptop/LP01.png" alt="Laptop Pro Max"></div>
+            <div class="slide-content">
+              <span class="tag">ALTA PERFORMANCE</span>
+              <h1>Laptop Pro Max</h1>
+              <p>Ideal para programação, design gráfico e produtividade.</p>
+              <a href="#" class="btn"><i class="fa-solid fa-cart-arrow-down"></i> Comprar Agora</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-inner">
+            <div class="slide-image"><img src="produtos/SmartPhone/I17Pro.png" alt="Smartphone Ultra"></div>
+            <div class="slide-content">
+              <span class="tag">NOVA TECNOLOGIA</span>
+              <h1>Iphone 17 Pro Max</h1>
+              <p>Câmera poderosa, tela AMOLED e desempenho avançado.</p>
+              <a href="#" class="btn"><i class="fa-solid fa-cart-arrow-down"></i> Comprar Agora</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-inner">
+            <div class="slide-image"><img src="produtos/Headset/air-pods.png" alt="Wireless Headset Pro"></div>
+            <div class="slide-content">
+              <span class="tag">SOM PROFISSIONAL</span>
+              <h1>Wireless Headset Pro</h1>
+              <p>Cancelamento de ruído e som cristalino.</p>
+              <a href="#" class="btn"><i class="fa-solid fa-cart-arrow-down"></i> Comprar Agora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <canvas id="tech-lines"></canvas>
+
+<!--------------------------- PREV E NEXT --------------------------->
+      <button class="prev">‹</button>
+      <button class="next">›</button>
+      <div class="dots"></div>
+    </div>
+  
+<!--------------------------- AREA DOS PRODUTOS --------------------------->
+<section class="produtos-container">
+  <div class="produtos-grid">
+
+  <div class="card-produto" data-nome="Samsung Galaxy S26 Ultra"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.7/10)"
+       data-descricao="Smartphone topo de linha da Samsung com câmera profissional, IA integrada e S-Pen."
+       data-especificacoes="Tela: 6.9&quot; AMOLED 120Hz | RAM: 12GB | Armazenamento: 512GB | Câmara traseira: 200MP + 50MP + 12MP + 10MP | Bateria: 5000mAh"
+       data-preco="≈ 83 107 MT"
+       data-imagem="produtos/SmartPhone/S26U.jpg">
+    <img src="produtos/SmartPhone/S26U.jpg" alt="Samsung Galaxy S26 Ultra">
+    <h3>Samsung Galaxy S26 Ultra</h3>
+    <div class="preco">≈ 83 107 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 200</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Samsung Galaxy Z Fold 7"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.6/10)"
+       data-descricao="Dispositivo dobrável premium, multitarefa com experiência de tablet."
+       data-especificacoes="Tela interna: 7.6&quot; AMOLED | RAM: 12GB | Armazenamento: 512GB | Bateria: 4800mAh"
+       data-preco="≈ 121 643 MT"
+       data-imagem="Produtos/SmartPhone/ZFold01.jpg">
+    <img src="Produtos/SmartPhone/ZFold01.jpg" alt="Samsung Galaxy Z Fold 7">
+    <h3>Samsung Galaxy Z Fold 7</h3>
+    <div class="preco">≈ 121 643 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 150</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Samsung Galaxy S25 FE"
+       data-avaliacao="⭐⭐⭐⭐☆ (9.2/10)"
+       data-descricao="Smartphone acessível da linha S, mantendo recursos premium."
+       data-especificacoes="Tela: 6.6&quot; AMOLED | RAM: 8GB | Armazenamento: 256GB | Bateria: 4900mAh"
+       data-preco="≈ 41 354 MT"
+       data-imagem="Produtos/SmartPhone/S25.jpg">
+    <img src="Produtos/SmartPhone/S25.jpg" alt="Samsung Galaxy S25 FE">
+    <h3>Samsung Galaxy S25 FE</h3>
+    <div class="preco">≈ 41 354 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 220</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="iPhone 17 Pro Max"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.8/10)"
+       data-descricao="Smartphone avançado da Apple com excelência em vídeo profissional."
+       data-especificacoes="Tela: 6.9&quot; XDR | RAM: 8GB | Armazenamento: 512GB | Câmara: 48MP tripla | Bateria: ~30h"
+       data-preco="≈ 86 689 MT"
+       data-imagem="Produtos/SmartPhone/I17Pro.png">
+    <img src="Produtos/SmartPhone/I17Pro.png" alt="iPhone 17 Pro Max">
+    <h3>iPhone 17 Pro Max</h3>
+    <div class="preco">≈ 86 689 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 110</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="iPhone 17 Pro"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.6/10)"
+       data-descricao="Versão compacta com mesma potência do Pro Max."
+       data-especificacoes="Tela: 6.3&quot; OLED | RAM: 8GB | Armazenamento: 512GB | Câmara: tripla 48MP"
+       data-preco="≈ 76 920 MT"
+       data-imagem="Produtos/SmartPhone/Apple-iPhone-17.png">
+    <img src="Produtos/SmartPhone/Apple-iPhone-17.png" alt="iPhone 17 Pro">
+    <h3>iPhone 17 Pro</h3>
+    <div class="preco">≈ 76 920 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 335</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="iPhone 17"
+       data-avaliacao="⭐⭐⭐⭐☆ (9.3/10)"
+       data-descricao="Modelo base com excelente desempenho e longevidade de software."
+       data-especificacoes="Tela: OLED | RAM: 6GB | Armazenamento: 512GB | Câmara: dupla"
+       data-preco="≈ 57 690 MT"
+       data-imagem="Produtos/SmartPhone/I17.png">
+    <img src="Produtos/SmartPhone/I17.png" alt="iPhone 17">
+    <h3>iPhone 17</h3>
+    <div class="preco">≈ 57 690 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 400</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="ASUS ROG Zephyrus G16"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.6/10)"
+       data-descricao="Laptop gamer premium com design ultrafino e potência para jogos AAA."
+       data-especificacoes="CPU: Intel i9 | GPU: RTX 4080 | RAM: 16GB | SSD: 1TB | Tela: 16&quot; QHD 240Hz"
+       data-preco="≈ 160 000 MT"
+       data-imagem="Produtos/Laptop/LP01.png">
+    <img src="Produtos/Laptop/LP01.png" alt="ASUS ROG Zephyrus G16">
+    <h3>ASUS ROG Zephyrus G16</h3>
+    <div class="preco">≈ 160 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 130</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="ASUS ROG Strix Scar 18"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.7/10)"
+       data-descricao="Máquina extrema para gamers e profissionais."
+       data-especificacoes="CPU: Intel i9 | GPU: RTX 4090 | RAM: 64GB | Tela: 18&quot; 240Hz"
+       data-preco="≈ 224 000 MT"
+       data-imagem="Produtos/Laptop/LP02.jpg">
+    <img src="Produtos/Laptop/LP02.jpg" alt="ASUS ROG Strix Scar 18">
+    <h3>ASUS ROG Strix Scar 18</h3>
+    <div class="preco">≈ 224 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 550</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="ASUS Zenbook Pro 16X"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.5/10)"
+       data-descricao="Laptop premium focado em criadores de conteúdo."
+       data-especificacoes="Tela: OLED 4K | GPU: RTX 4070 | RAM: 32GB"
+       data-preco="≈ 179 200 MT"
+       data-imagem="Produtos/Laptop/LP03.jpg">
+    <img src="Produtos/Laptop/LP03.jpg" alt="ASUS Zenbook Pro 16X">
+    <h3>ASUS Zenbook Pro 16X</h3>
+    <div class="preco">≈ 179 200 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 420</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Sony WH-1000XM5"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.8/10)"
+       data-descricao="Headset referência mundial em cancelamento de ruído."
+       data-especificacoes="ANC: avançado | Bateria: 30h | Bluetooth 5.3 | Áudio Hi-Res"
+       data-preco="≈ 26 760 MT"
+       data-imagem="Produtos/HeadSet/AirPod.webp">
+    <img src="Produtos/HeadSet/AirPod.webp" alt="Sony WH-1000XM5">
+    <h3>Sony WH-1000XM5</h3>
+    <div class="preco">≈ 26 760 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 250</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Sony WF-1000XM5"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.6/10)"
+       data-descricao="Earbuds premium compactos com som profissional."
+       data-especificacoes="ANC | Bateria: 24h | IPX4"
+       data-preco="≈ 20 070 MT"
+       data-imagem="Produtos/HeadSet/HeadP.webp">
+    <img src="Produtos/HeadSet/HeadP.webp" alt="Sony WF-1000XM5">
+    <h3>Sony WF-1000XM5</h3>
+    <div class="preco">≈ 20 070 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 390</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Sony WH-1000XM4"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.5/10)"
+       data-descricao="Versão anterior ainda altamente competitiva."
+       data-especificacoes="ANC | 30h bateria"
+       data-preco="≈ 17 725 MT"
+       data-imagem="Produtos/HeadSet/Heads.jpg">
+    <img src="Produtos/HeadSet/Heads.jpg" alt="Sony WH-1000XM4">
+    <h3>Sony WH-1000XM4</h3>
+    <div class="preco">≈ 17 725 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 540</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Gigabyte AORUS Model X"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.7/10)"
+       data-descricao="Desktop extremo para gaming e criação."
+       data-especificacoes="CPU: Intel i9 | GPU: RTX 4090 | RAM: 32–64GB | SSD: 2TB"
+       data-preco="≈ 268 000 MT"
+       data-imagem="Produtos/DeskTop/PC01.webp">
+    <img src="Produtos/DeskTop/PC01.webp" alt="Gigabyte AORUS Model X">
+    <h3>Gigabyte AORUS Model X</h3>
+    <div class="preco">≈ 268 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 650</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Gigabyte AORUS Model S"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.5/10)"
+       data-descricao="PC compacto com alto desempenho."
+       data-especificacoes="GPU: RTX 4080 | RAM: 32GB"
+       data-preco="≈ 214 400 MT"
+       data-imagem="Produtos/DeskTop/PC02.webp">
+    <img src="Produtos/DeskTop/PC02.webp" alt="Gigabyte AORUS Model S">
+    <h3>Gigabyte AORUS Model S</h3>
+    <div class="preco">≈ 214 400 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 320</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Gigabyte AORUS Gaming Desktop"
+       data-avaliacao="⭐⭐⭐⭐☆ (9.3/10)"
+       data-descricao="Opção mais acessível para gaming avançado."
+       data-especificacoes="GPU: RTX 4070 | RAM: 16GB"
+       data-preco="≈ 147 500 MT"
+       data-imagem="Produtos/DeskTop/PC03.webp">
+    <img src="Produtos/DeskTop/PC03.webp" alt="Gigabyte Gaming Desktop">
+    <h3>Gigabyte Gaming Desktop</h3>
+    <div class="preco">≈ 147 500 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 570</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Huawei Mate X3"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.5/10)"
+       data-descricao="Dispositivo dobrável premium Huawei."
+       data-especificacoes="Tela: 8&quot; AMOLED | RAM: 12GB | Armazenamento: 512GB"
+       data-preco="≈ 95 000 MT"
+       data-imagem="Produtos/SmartPhone/Mate.jpg">
+    <img src="Produtos/SmartPhone/Mate.jpg" alt="Huawei Mate X3">
+    <h3>Huawei Mate X3</h3>
+    <div class="preco">≈ 95 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 180</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Xiaomi 14 Ultra"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.4/10)"
+       data-descricao="Smartphone topo de linha da Xiaomi, com câmera avançada."
+       data-especificacoes="Tela: 6.8&quot; AMOLED | RAM: 12GB | Armazenamento: 512GB"
+       data-preco="≈ 50 000 MT"
+       data-imagem="Produtos/SmartPhone/Xiaomi 17 Pro.jpg">
+    <img src="Produtos/SmartPhone/Xiaomi 17 Pro.jpg" alt="Xiaomi 14 Ultra">
+    <h3>Xiaomi 14 Ultra</h3>
+    <div class="preco">≈ 50 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 542</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="OnePlus 12 Pro"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.3/10)"
+       data-descricao="Smartphone potente e rápido, ideal para multitarefa."
+       data-especificacoes="Tela: 6.7&quot; AMOLED | RAM: 12GB | Armazenamento: 512GB"
+       data-preco="≈ 45 000 MT"
+       data-imagem="Produtos/SmartPhone/OnePlus 12 Pro.jpg">
+    <img src="Produtos/SmartPhone/OnePlus 12 Pro.jpg" alt="OnePlus 12 Pro">
+    <h3>OnePlus 12 Pro</h3>
+    <div class="preco">≈ 45 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 210</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Dell XPS 17"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.4/10)"
+       data-descricao="Laptop Dell XPS 17 para criadores e designers."
+       data-especificacoes="CPU: Intel i9 | GPU: RTX 4070 | RAM: 32GB | Tela: 17&quot; 4K"
+       data-preco="≈ 175 000 MT"
+       data-imagem="Produtos/Laptop/Dell XPS 17.avif">
+    <img src="Produtos/Laptop/Dell XPS 17.avif" alt="Dell XPS 17">
+    <h3>Dell XPS 17</h3>
+    <div class="preco">≈ 175 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 340</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="HP Spectre x360"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.3/10)"
+       data-descricao="Laptop conversível premium para produtividade e entretenimento."
+       data-especificacoes="CPU: Intel i7 | GPU: Intel Iris Xe | RAM: 16GB | Tela: 15&quot; OLED"
+       data-preco="≈ 105 000 MT"
+       data-imagem="Produtos/Laptop/HP Spectre x360.webp">
+    <img src="Produtos/Laptop/HP Spectre x360.webp" alt="HP Spectre x360">
+    <h3>HP Spectre x360</h3>
+    <div class="preco">≈ 105 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 150</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Bose QuietComfort 45"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.7/10)"
+       data-descricao="Headset com excelente cancelamento de ruído e conforto."
+       data-especificacoes="ANC | Bateria: 24h | Bluetooth 5.1"
+       data-preco="≈ 22 500 MT"
+       data-imagem="Produtos/HeadSet/Bose QuietComfort 45.jpg">
+    <img src="Produtos/HeadSet/Bose QuietComfort 45.jpg" alt="Bose QuietComfort 45">
+    <h3>Bose QuietComfort 45</h3>
+    <div class="preco">≈ 22 500 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 220</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="JBL Live Pro 3"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.5/10)"
+       data-descricao="Earbuds de alta qualidade com som potente e conectividade fácil."
+       data-especificacoes="ANC | Bateria: 20h | IPX5"
+       data-preco="≈ 16 500 MT"
+       data-imagem="Produtos/HeadSet/JBL Live Pro 3.jpg">
+    <img src="Produtos/HeadSet/JBL Live Pro 3.jpg" alt="JBL Live Pro 3">
+    <h3>JBL Live Pro 3</h3>
+    <div class="preco">≈ 16 500 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 530</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Razer Blade 17"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.6/10)"
+       data-descricao="Laptop gamer premium com design elegante e hardware potente."
+       data-especificacoes="CPU: Intel i9 | GPU: RTX 4080 | RAM: 32GB | Tela: 17&quot; QHD"
+       data-preco="≈ 215 000 MT"
+       data-imagem="Produtos/Laptop/Razer Blade 17.jpg">
+    <img src="Produtos/Laptop/Razer Blade 17.jpg" alt="Razer Blade 17">
+    <h3>Razer Blade 17</h3>
+    <div class="preco">≈ 215 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 450</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  <div class="card-produto" data-nome="Lenovo Legion 7"
+       data-avaliacao="⭐⭐⭐⭐⭐ (9.5/10)"
+       data-descricao="Laptop gamer com excelente refrigeração e desempenho."
+       data-especificacoes="CPU: AMD Ryzen 9 | GPU: RTX 4070 | RAM: 32GB | Tela: 16&quot; QHD"
+       data-preco="≈ 195 000 MT"
+       data-imagem="Produtos/Laptop/Lenovo Legion 7.jpg">
+    <img src="Produtos/Laptop/Lenovo Legion 7.jpg" alt="Lenovo Legion 7">
+    <h3>Lenovo Legion 7</h3>
+    <div class="preco">≈ 195 000 MT</div>
+    <div class="quantidade" data-quantidade="0">Qtd: 100</div>
+    <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+  </div>
+
+  </div>
+</section>
+  </main>
+
+<!--------------------------- AREA DO CADASTRO --------------------------->
+  <div class="popup-auth" id="popupAuth">
+    <div class="auth-container">
+      <div class="auth-overlay" id="authOverlay">
+        <div class="overlay-content">
+          <h2 id="overlayTitle">Bem-vindo!</h2>
+          <p id="overlayText">Ainda não tens conta?</p>
+          <button id="toggleAuth">Registrar</button>
+        </div>
+      </div>
+
+      <div class="auth-box login-box">
+        <h2>Entrar</h2>
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Palavra-passe">
+        <button class="btn-user">Login</button>
+        <p>ou entrar com:</p>
+        <button class="btn-google"><i class="fab fa-google"></i> Google</button>
+      </div>
+
+      <div class="auth-box register-box">
+        <h2>Registrar</h2>
+        <input type="text" placeholder="Nome Completo">
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Palavra-passe">
+        <input type="password" placeholder="Confirmar senha">
+        <button class="btn-user">Criar Conta</button>
+        <p>ou registar com:</p>
+        <button class="btn-google"><i class="fab fa-google"></i> Google</button>
+      </div>
+    </div>
+  </div>
+
+<!--------------------------- AREA NEWSLETTER --------------------------->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+
+    <div class="newsletter-text">
+      <h2>Newsletter NexStore</h2>
+      <p class="subtitle">
+        Conecte-se ao futuro com tecnologia inovadora
+      </p>
+      <p class="desc">
+        Receba ofertas, novidades e produtos exclusivos diretamente no seu e-mail.
+      </p>
+    </div>
+
+    <div class="newsletter-form">
+      <input type="email" placeholder="Insira o seu e-mail">
+      <button>INSCREVER-SE</button>
+
+      <label class="terms">
+        <input type="checkbox">
+        Concordo com os <a href="#">Termos e Condições</a>
+      </label>
+    </div>
+
+  </div>
+</section>
+
+<!-------------- AREA POPUP COOKIES -------------->
+<div class="cookie-popup" id="cookiePopup">
+  <p
+    data-pt="Este website contém uso de cookies para melhorar sua experiência, personalizar conteúdos e analisar o tráfego. Ao continuar a navegar neste website, você concorda com o uso de cookies, conforme descrito em nossa "
+    data-en="This website uses cookies to improve your experience, personalize content, and analyze traffic. By continuing to browse this website, you agree to the use of cookies, as described in our ">
+    Este website contém uso de cookies para melhorar sua experiência, personalizar conteúdos e analisar o tráfego. Ao continuar a navegar neste website, você concorda com o uso de cookies, conforme descrito em nossa 
+    <a href="#" data-pt="Política de Privacidade" data-en="Privacy Policy">Política de Privacidade</a>.
+  </p>
+  <button id="acceptCookies" data-pt="ACEITAR" data-en="ACCEPT">ACEITAR</button>
+</div>
+
+<!-------------- AREA BACKTOTOP -------------->
+<button class="backToTop">
+  <svg class="progress-circle" width="40" height="40">
+    <circle cx="20" cy="20" r="18"></circle>
+    <circle cx="20" cy="20" r="18"></circle>
+  </svg>
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!--------------------------- AREA FOOTER --------------------------->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-sobre">
+      <img src="Logotipo/Logo04.png" class="footer-logo">
+      <p>
+        A NexStore é a sua loja online de tecnologia, onde você explora tudo ao seu gosto. Oferecemos os melhores produtos
+        com garantia, qualidade, inovação e entrega segura em qualquer ponto de Moçambique.
+      </p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/nexstore"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/nexstore"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/nexstore"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/nexstore"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-pages">
+      <h3>Links Rápidos</h3>
+      <ul>
+        <li><a href="paginas/contactos.html">Contactos</a></li>
+        <li><a href="paginas/importacao.html">Importação</a></li>
+        <li><a href="paginas/manutencao.html">Manutenção</a></li>
+        <li><a href="paginas/produtos.html">Produtos</a></li>
+        <li><a href="paginas/servicos.html">Serviços</a></li>
+        <li><a href="paginas/sobre-nos.html">Sobre Nós</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-categorias">
+      <h3>Categorias</h3>
+      <ul>
+        <li><a href="paginas/musicbox.html">MusicBox</a></li>
+        <li><a href="paginas/smartphone.html">Smartphones</a></li>
+        <li><a href="paginas/laptop.html">Laptops</a></li>
+        <li><a href="paginas/headset.html">Headsets</a></li>
+        <li><a href="paginas/desktop.html">Desktops</a></li>
+        <li><a href="paginas/smartwatch.html">SmartWatchs</a></li>
+      </ul>
+    </div>
+
+    <div class="contactos-footer">
+      <h3>Contactos</h3>
+      <div class="footer-item">
+        <i class="fas fa-phone"></i>
+        <div class="footer-info">
+          <p><a href="tel:+258846686990">+258 846686990</a></p>
+          <p><a href="tel:+258876686990">+258 876686990</a></p>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <i class="fas fa-envelope"></i>
+        <div class="footer-info">
+          <p><a href="mailto:contacto@nexstore.co.mz">contacto@nexstore.co.mz</a></p>
+          <p><a href="mailto:suporte@nexstore.co.mz">suporte@nexstore.co.mz</a></p>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="footer-info">
+          <p>Baixa da Cidade, Maputo</p>
+          <p>Moçambique</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Copyright ©2026 <a href="index.html">NexStore</a> | Todos os Direitos Reservados.</p>
+  </div>
+</footer>
+<!--------------------------- JAVASCRIPT --------------------------->
+  <script src="js/script.js"></script>
+  <script src="js/carinha.js"></script>
+  <script src="js/pesquisar.js"></script>
+  <script src="js/backToTop.js"></script>
+  <script src="js/smarthead.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="../NexStore/backend/server.js"></script>
+  <script src="../NexStore/backend/config/db.js"></script>
+  <script src="../NexStore/backend/controllers/authController.js"></script>
+  <script src="../NexStore/backend/routes/authRoutes.js"></script>
+</body>
+</html>

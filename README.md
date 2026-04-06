@@ -1,2 +1,7 @@
-# NexStore
-O presente projecto foi desenvolvido no âmbito das actividades académicas da Universidade Aberta ISCED (UnISCED), com o objectivo de criar um sistema de e-commerce funcional e inovador. Denominado NexStore – Sua Loja de Tecnologia, o projecto visa oferecer uma solução eficiente para a comercialização de produtos tecnológicos.
+A NexStore é uma loja moçambicana de tecnologia que atua tanto no espaço físico quanto no digital, dedicada a oferecer soluções modernas e acessíveis para o dia a dia dos seus clientes. Com base em Moçambique, trabalhamos para aproximar as pessoas das melhores tecnologias, com produtos de qualidade e serviços confiáveis.
+
+O nosso portfólio inclui desktops, laptops, smartphones, smartwatches, além de acessórios como headsets e music boxes (caixas de som portáteis), ideais para entretenimento, trabalho e comunicação. Também atuamos na área de importações, trazendo para o mercado moçambicano equipamentos atualizados e inovadores, muitas vezes indisponíveis localmente, sempre com garantia de qualidade e procedência.
+
+Além da venda de produtos, a NexStore oferece serviços de manutenção e assistência técnica especializada, garantindo suporte completo aos seus dispositivos eletrónicos. Desde pequenos reparos até intervenções mais complexas, trabalhamos com profissionalismo para assegurar o melhor desempenho e durabilidade dos equipamentos.
+
+Como uma empresa moçambicana, valorizamos a proximidade com os nossos clientes, oferecendo um atendimento personalizado, transparente e adaptado à realidade local. O nosso objetivo é contribuir para o crescimento tecnológico em Moçambique, facilitando o acesso a soluções modernas com confiança e eficiência.

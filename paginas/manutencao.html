@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/smarthead.css">
+  <link rel="stylesheet" href="../CSS/manutencao.css">
+  <link rel="icon" type="image/png" href="../logotipo/Icon.png" />
+  <title>Manutenção | NexStore</title>
+</head>
+<body>
+
+<!--------------------------- AREA DO HEADER --------------------------->
+  <header class="cabecalho-principal">
+    <div class="container-cabecalho">
+
+<!--------------------------- TOGGLE MOBILE MENU --------------------------->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+      <div class="container-logo">
+        <a href="../index.html"><img src="../logotipo/Logo04.png" class="logo-img"></a>
+      </div>
+
+      <nav class="menu">
+        <a href="../index.html">Início</a>
+        <a href="../paginas/contactos.html">Contactos</a>
+        <div class="dropdown">
+          <span>Produtos <i class="fas fa-chevron-down"></i></span>
+          <div class="dropdown-menu">
+            <a href="../paginas/desktop.html"><i class="fas fa-desktop"></i> DeskTop</a>
+            <a href="../paginas/headset.html"><i class="fas fa-headphones"></i> HeadSet</a>
+            <a href="../paginas/laptop.html"><i class="fas fa-laptop"></i> Laptop</a>
+            <a href="../paginas/musicbox.html"><i class="fa-solid fa-music"></i> MusicBox</a>
+            <a href="../paginas/smartphone.html"><i class="fas fa-mobile-alt"></i> SmartPhone</a>
+            <a href="../paginas/smartwatch.html"><i class="fa-solid fa-stopwatch"></i> SmartWatch</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span>Serviços <i class="fas fa-chevron-down"></i></span>
+          <div class="dropdown-menu">
+            <a href="../paginas/importacao.html"><i class="fas fa-truck"></i> Importação</a>
+            <a href="../paginas/manutencao.html"><i class="fas fa-tools"></i> Manutenção</a>
+          </div>
+        </div>
+        <a href="../paginas/sobre-nos.html">Sobre Nós</a>
+      </nav>
+
+      <div class="search-box">
+  <input type="text" id="searchInput" placeholder="Pesquisar...">
+  <i class="fas fa-search"></i>
+  </div>
+
+  <div id="searchPopup" class="popup-404">
+  <div class="popup-404-box">
+    <h1>Ops...</h1>
+    <h2>Não encontramos esse produto</h2>
+    <p>Tente pesquisar com outro nome ou explore os produtos disponíveis na loja.</p>
+
+    <div class="popup-actions">
+      <a href="../frontend/index.html" class="btn-explorar">
+        Ver produtos
+      </a>
+      <button onclick="fecharPopup404()" class="btn-fechar">
+        Fechar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--------------------------- AREA DO USUÁRIO E CARRINHO --------------------------->
+<div class="acoes">
+  <button class="btn-user"><i class="fas fa-user"></i></button>
+
+  <div class="cart-container">
+    <button class="btn-cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span>
+    </button>
+
+    <div class="cart-popup">
+      <h3>Seu Carrinho</h3>
+
+      <ul class="cart-items"></ul>
+
+      <div class="cart-summary">
+        <p>Total</p>
+        <span class="cart-total-value">0 MT</span>
+      </div>
+
+      <div class="payment-method">
+        <select id="paymentSelect">
+          <label for="paymentSelect">Escolha Forma de Pagar:</label>
+          <option value="mpesa">M-Pesa</option>
+          <option value="emola">E-Mola</option>
+          <option value="mkesh">mKesh</option>
+        </select>
+      </div>
+
+      <div class="cart-actions">
+        <button class="checkout-btn"><i class="fa-solid fa-bag-shopping"></i> Confirmar Pagamento</button>
+      </div>
+    </div>
+  </div>
+
+<div id="paymentPopup" class="payment-popup">
+  <div class="payment-popup-box">
+    <h2>Pagamento</h2>
+    <p>Insira seu número para concluir a transação:</p>
+    <input type="text" id="paymentNumber" placeholder="_________" maxlength="12">
+    <button id="confirmPaymentBtn">Confirmar Pagamento</button>
+    <button class="close-popup" onclick="closePaymentPopup()">×</button>
+  </div>
+</div>
+</div>
+    </div>
+  </header>
+
+<!-- --------------- SMARTHEAD MODERNO --------------- -->
+<section class="smarthead">
+  <div class="edu-slides">
+    <div class="edu-slide s1" style="background-image: url('../produtos/laptop/Lap01.jpg');"></div>
+    <div class="edu-slide s2" style="background-image: url('../produtos/laptop/Lap08.jpg');"></div>
+    <div class="edu-slide s3" style="background-image: url('../produtos/laptop//LP02.jpg');"></div>
+  </div>
+
+  <canvas id="tech-smart"></canvas>
+
+  <div class="edu-overlay"></div>
+
+  <div class="edu-content">
+    <span class="edu-eyebrow">Está em</span>
+    <h1>Manutenção</h1>
+    <nav class="edu-breadcrumb">
+      <a href="../index.html">Início</a>
+      <span>/</span>
+      <strong>Manutenção</strong>
+    </nav>
+  </div>
+</section>
+
+<body>
+<!--------------------------- AREA DE MANUTENÇÃO --------------------------->
+<section class="about">
+    <div class="container">
+        <h1>Precisa de Suporte Técnico?</h1>
+        <p>Oferecemos assistência completa para todos os seus dispositivos, desde desktops, laptops, tablets, smartphones, smartwatches e TVs inteligentes. Cada atendimento é conduzido com profissionalismo, rapidez e confiança, garantindo que seu equipamento funcione perfeitamente e que você tenha tranquilidade. Nossa equipe combina conhecimento técnico especializado com atenção aos detalhes, tratando cada aparelho como se fosse nosso, para que você possa aproveitar a tecnologia sem preocupações.</p>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <h2>Por Que Escolher a NexStore?</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-user-cog"></i>
+                <h3>Equipe Especializada</h3>
+                <p>Técnicos treinados e atualizados com as últimas tecnologias do mercado.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-stopwatch"></i>
+                <h3>Atendimento Ágil</h3>
+                <p>Diagnósticos rápidos e soluções eficientes sem comprometer seu tempo.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cogs"></i>
+                <h3>Peças de Qualidade</h3>
+                <p>Componentes confiáveis e originais, garantindo durabilidade.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-handshake"></i>
+                <h3>Transparência</h3>
+                <p>Você acompanha todo o processo e recebe soluções honestas.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-school-circle-check"></i>
+                <h3>Garantia de Serviço</h3>
+                <p>Todos os reparos e manutenções contam com garantia, assegurando sua tranquilidade.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-headset"></i>
+                <h3>Suporte Contínuo</h3>
+                <p>Atendimento pós-serviço e suporte remoto para resolver qualquer imprevisto.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-desktop"></i>
+                <h3>Computadores & Notebooks</h3>
+                <p>Limpeza interna e externa, substituição de HD, SSD, memória e placas, atualização de sistemas e softwares.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Smartphones & Tablets</h3>
+                <p>Troca de telas, baterias e componentes, reparo de áudio, câmeras e sensores, atualização e otimização de sistemas.</p>
+            </div>
+            <div class="card">
+                <i class="fa-brands fa-reacteurope"></i>
+                <h3>Smartwatches</h3>
+                <p>Substituição de baterias e pulseiras, reparo de telas e sensores, atualização de firmware.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-tv"></i>
+                <h3>Televisores Inteligentes</h3>
+                <p>Reparo de telas, conectores e placas, ajustes de imagem e som, otimização de sistema e conectividade.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-wifi"></i>
+                <h3>Redes & Internet</h3>
+                <p>Instalação e configuração de roteadores, redes Wi-Fi, cabeamento estruturado, otimização de velocidade e segurança da rede.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-tools"></i>
+                <h3>Suporte Técnico Geral</h3>
+                <p>Consultoria e manutenção preventiva, remoção de vírus e malwares, backup de dados, recuperação de arquivos e suporte remoto.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <h2>Benefícios de Manter Seus Dispositivos com a NexStore</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Maior Durabilidade</h3>
+                <p>Seus aparelhos funcionando por muito mais tempo, evitando gastos desnecessários.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Melhor Desempenho</h3>
+                <p>Dispositivos rápidos, confiáveis e sem travamentos, para trabalhar e se divertir sem problemas.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-coins"></i>
+                <h3>Economia</h3>
+                <p>Evite compras desnecessárias com manutenção preventiva e cuidados constantes.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-smile"></i>
+                <h3>Tranquilidade</h3>
+                <p>Serviço seguro e realizado por profissionais qualificados, garantindo sua confiança.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-lock"></i>
+                <h3>Segurança de Dados</h3>
+                <p>Proteção completa das suas informações durante reparos e atualizações, garantindo privacidade total.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-headset"></i>
+                <h3>Suporte Personalizado</h3>
+                <p>Atendimento dedicado, com soluções adaptadas às suas necessidades e acompanhamento pós-serviço.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <h2>Agende Seu Atendimento</h2>
+        <p>Não deixe seus dispositivos pararem de funcionar no momento errado. Com a NexStore, seus aparelhos voltam a funcionar como novos, com <strong>eficiência, cuidado e confiança</strong>.</p>
+    </div>
+</section>
+
+<!--------------------------- AREA DO CADASTRO --------------------------->
+  <div class="popup-auth" id="popupAuth">
+    <div class="auth-container">
+      <div class="auth-overlay" id="authOverlay">
+        <div class="overlay-content">
+          <h2 id="overlayTitle">Bem-vindo!</h2>
+          <p id="overlayText">Ainda não tens conta?</p>
+          <button id="toggleAuth">Registrar</button>
+        </div>
+      </div>
+
+      <div class="auth-box login-box">
+        <h2>Entrar</h2>
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Palavra-passe">
+        <button>Login</button>
+        <p>ou entrar com:</p>
+        <button class="btn-google"><i class="fab fa-google"></i> Google</button>
+      </div>
+
+      <div class="auth-box register-box">
+        <h2>Registrar</h2>
+        <input type="text" placeholder="Nome Completo">
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Palavra-passe">
+        <input type="password" placeholder="Confirmar senha">
+        <button>Criar Conta</button>
+        <p>ou registar com:</p>
+        <button class="btn-google"><i class="fab fa-google"></i> Google</button>
+      </div>
+    </div>
+  </div>
+
+<!--------------------------- AREA NEWSLETTER --------------------------->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+
+    <div class="newsletter-text">
+      <h2>Newsletter NexStore</h2>
+      <p class="subtitle">
+        Conecte-se ao futuro com tecnologia inovadora
+      </p>
+      <p class="desc">
+        Receba ofertas, novidades e produtos exclusivos diretamente no seu e-mail.
+      </p>
+    </div>
+
+    <div class="newsletter-form">
+      <input type="email" placeholder="Insira o seu e-mail">
+      <button>INSCREVER-SE</button>
+
+      <label class="terms">
+        <input type="checkbox">
+        Concordo com os <a href="#">Termos e Condições</a>
+      </label>
+    </div>
+
+  </div>
+</section>
+
+<!-------------- AREA BACKTOTOP -------------->
+<button class="backToTop">
+  <svg class="progress-circle" width="40" height="40">
+    <circle cx="20" cy="20" r="18"></circle>
+    <circle cx="20" cy="20" r="18"></circle>
+  </svg>
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!--------------------------- AREA FOOTER --------------------------->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-sobre">
+      <img src="../logotipo/Logo04.png" class="footer-logo">
+      <p>
+        A NexStore é a sua loja online de tecnologia, onde você explora tudo ao seu gosto. Oferecemos os melhores produtos
+        com garantia, qualidade, inovação e entrega segura em qualquer ponto de Moçambique.
+      </p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/nexstore"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/nexstore"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/nexstore"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/nexstore"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-pages">
+      <h3>Links Rápidos</h3>
+      <ul>
+        <li><a href="../paginas/contactos.html">Contactos</a></li>
+        <li><a href="../paginas/importacao.html">Importação</a></li>
+        <li><a href="../paginas/manutencao.html">Manutenção</a></li>
+        <li><a href="../paginas/produtos.html">Produtos</a></li>
+        <li><a href="../paginas/servicos.html">Serviços</a></li>
+        <li><a href="../paginas/sobre-nos.html">Sobre Nós</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-categorias">
+      <h3>Categorias</h3>
+      <ul>
+        <li><a href="../paginas/musicbox.html">MusicBox</a></li>
+        <li><a href="../paginas/smartphone.html">Smartphones</a></li>
+        <li><a href="../paginas/laptop.html">Laptops</a></li>
+        <li><a href="../paginas/headset.html">Headsets</a></li>
+        <li><a href="../paginas/desktop.html">Desktops</a></li>
+        <li><a href="../paginas/smartwatch.html">SmartWatchs</a></li>
+      </ul>
+    </div>
+
+    <div class="contactos-footer">
+      <h3>Contactos</h3>
+      <div class="footer-item">
+        <i class="fas fa-phone"></i>
+        <div class="footer-info">
+          <p><a href="tel:+258846686990">+258 846686990</a></p>
+          <p><a href="tel:+258876686990">+258 876686990</a></p>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <i class="fas fa-envelope"></i>
+        <div class="footer-info">
+          <p><a href="mailto:contacto@nexstore.co.mz">contacto@nexstore.co.mz</a></p>
+          <p><a href="mailto:suporte@nexstore.co.mz">suporte@nexstore.co.mz</a></p>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="footer-info">
+          <p>Baixa da Cidade, Maputo</p>
+          <p>Moçambique</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Copyright ©2026 <a href="../index.html">NexStore</a> | Todos os Direitos Reservados.</p>
+  </div>
+</footer>
+<!--------------------------- JAVASCRIPT --------------------------->
+  <script src="../js/script.js"></script>
+  <script src="../js/carinha.js"></script>
+  <script src="../js/pesquisar.js"></script>
+  <script src="../js/backToTop.js"></script>
+  <script src="../js/smarthead.js"></script>
+  <script src="../ js/auth.js"></script>
+  <script src="../js/cookies.js"></script>
+  <script src="frontend/backend/server.js"></script>
+  <script src="frontend/backend/config/db.js"></script>
+  <script src="frontend/backend/controllers/authController.js"></script>
+  <script src="frontend/backend/routes/authRoutes.js"></script>
+</body>
+</html>

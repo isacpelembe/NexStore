@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/smarthead.css">
+  <link rel="icon" type="image/png" href="../logotipo/Icon.png" />
+  <title>SmartPhone | NexStore</title>
+</head>
+<body>
+
+<!--------------------------- AREA DO HEADER --------------------------->
+  <header class="cabecalho-principal">
+    <div class="container-cabecalho">
+
+        <!--------------------------- TOGGLE MOBILE MENU --------------------------->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+      <div class="container-logo">
+        <a href="../index.html"><img src="../logotipo/Logo04.png" class="logo-img"></a>
+      </div>
+
+      <nav class="menu">
+        <a href="../index.html">Início</a>
+        <a href="../paginas/contactos.html">Contactos</a>
+        <div class="dropdown">
+          <span>Produtos <i class="fas fa-chevron-down"></i></span>
+          <div class="dropdown-menu">
+            <a href="../paginas/desktop.html"><i class="fas fa-desktop"></i> DeskTop</a>
+            <a href="../paginas/headset.html"><i class="fas fa-headphones"></i> HeadSet</a>
+            <a href="../paginas/laptop.html"><i class="fas fa-laptop"></i> Laptop</a>
+            <a href="../paginas/musicbox.html"><i class="fa-solid fa-music"></i> MusicBox</a>
+            <a href="../paginas/smartphone.html"><i class="fas fa-mobile-alt"></i> SmartPhone</a>
+            <a href="../paginas/smartwatch.html"><i class="fa-solid fa-stopwatch"></i> SmartWatch</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span>Serviços <i class="fas fa-chevron-down"></i></span>
+          <div class="dropdown-menu">
+            <a href="../paginas/importacao.html"><i class="fas fa-truck"></i> Importação</a>
+            <a href="../paginas/manutencao.html"><i class="fas fa-tools"></i> Manutenção</a>
+          </div>
+        </div>
+        <a href="../paginas/sobre-nos.html">Sobre Nós</a>
+      </nav>
+
+      <div class="search-box">
+  <input type="text" id="searchInput" placeholder="Pesquisar...">
+  <i class="fas fa-search"></i>
+  </div>
+
+  <div id="searchPopup" class="popup-404">
+  <div class="popup-404-box">
+    <h1>Ops...</h1>
+    <h2>Não encontramos esse produto</h2>
+    <p>Tente pesquisar com outro nome ou explore os produtos disponíveis na loja.</p>
+
+    <div class="popup-actions">
+      <a href="../frontend/index.html" class="btn-explorar">
+        Ver produtos
+      </a>
+      <button onclick="fecharPopup404()" class="btn-fechar">
+        Fechar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--------------------------- AREA DO USUÁRIO E CARRINHO --------------------------->
+<div class="acoes">
+  <button class="btn-user"><i class="fas fa-user"></i></button>
+
+  <div class="cart-container">
+    <button class="btn-cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span>
+    </button>
+
+    <div class="cart-popup">
+      <h3>Seu Carrinho</h3>
+
+      <ul class="cart-items"></ul>
+
+      <div class="cart-summary">
+        <p>Total</p>
+        <span class="cart-total-value">0 MT</span>
+      </div>
+
+      <div class="payment-method">
+        <select id="paymentSelect">
+          <label for="paymentSelect">Escolha Forma de Pagar:</label>
+          <option value="mpesa">M-Pesa</option>
+          <option value="emola">E-Mola</option>
+          <option value="mkesh">mKesh</option>
+        </select>
+      </div>
+
+      <div class="cart-actions">
+        <button class="checkout-btn"><i class="fa-solid fa-bag-shopping"></i> Confirmar Pagamento</button>
+      </div>
+    </div>
+  </div>
+
+<div id="paymentPopup" class="payment-popup">
+  <div class="payment-popup-box">
+    <h2>Pagamento</h2>
+    <p>Insira seu número para concluir a transação:</p>
+    <input type="text" id="paymentNumber" placeholder="_________" maxlength="12">
+    <button id="confirmPaymentBtn">Confirmar Pagamento</button>
+    <button class="close-popup" onclick="closePaymentPopup()">×</button>
+  </div>
+</div>
+</div>
+    </div>
+  </header>
+
+<!-- --------------- SMARTHEAD MODERNO --------------- -->
+<section class="smarthead">
+  <div class="edu-slides">
+    <div class="edu-slide s1" style="background-image: url('../produtos/desktop/PC01.webp');"></div>
+    <div class="edu-slide s2" style="background-image: url('../produtos/desktop/PC02.webp');"></div>
+    <div class="edu-slide s3" style="background-image: url('../produtos/desktop/PC03.webp');"></div>
+  </div>
+
+  <canvas id="tech-smart"></canvas>
+
+  <div class="edu-overlay"></div>
+
+  <div class="edu-content">
+    <span class="edu-eyebrow">Está em</span>
+    <h1>SmartPhones</h1>
+    <nav class="edu-breadcrumb">
+      <a href="../index.html">Início</a>
+      <span>/</span>
+      <strong>SmartPhone</strong>
+    </nav>
+  </div>
+</section>
+
+<body>
+<!--------------------------- AREA DOS PRODUTOS --------------------------->
+<section class="produtos-container">
+  <div class="produtos-grid">
+    <div class="card-produto" data-nome="iPhone 17 Pro Max" data-preco="≈ 190 000 MT" data-imagem="Produtos/Smartphone/iPhone 15 Pro Max.jpg">
+  <img src="../produtos/smartphone/Apple-iPhone-17.png">
+  <h3>iPhone 17 Pro Max</h3>
+  <div class="preco">≈ 190 000 MT</div>
+  <div class="quantidade" data-quantidade="80">Qtd: 80</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="iPhone 17" data-preco="≈ 160 000 MT" data-imagem="Produtos/Smartphone/iPhone 15.jpg">
+  <img src="../produtos/smartphone/I17N.jpg">
+  <h3>iPhone 17</h3>
+  <div class="preco">≈ 160 000 MT</div>
+  <div class="quantidade" data-quantidade="90">Qtd: 90</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Samsung Galaxy S26 Ultra" data-preco="≈ 175 000 MT" data-imagem="Produtos/Smartphone/Samsung Galaxy S23 Ultra.jpg">
+  <img src="../produtos/smartphone/S26.jpg">
+  <h3>Samsung Galaxy S26 Ultra</h3>
+  <div class="preco">≈ 175 000 MT</div>
+  <div class="quantidade" data-quantidade="70">Qtd: 70</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Samsung Galaxy S23+" data-preco="≈ 160 000 MT" data-imagem="Produtos/Smartphone/Samsung Galaxy S23+.jpg">
+  <img src="../produtos/smartphone/S26U.jpg">
+  <h3>Samsung Galaxy S23+</h3>
+  <div class="preco">≈ 160 000 MT</div>
+  <div class="quantidade" data-quantidade="85">Qtd: 85</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Huawei Mate 50 Pro" data-preco="≈ 155 000 MT" data-imagem="Produtos/Smartphone/Huawei Mate 50 Pro.jpg">
+  <img src="../produtos/smartphone/Mate.jpg">
+  <h3>Huawei Mate 50 Pro</h3>
+  <div class="preco">≈ 155 000 MT</div>
+  <div class="quantidade" data-quantidade="60">Qtd: 60</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Huawei Mate 50" data-preco="≈ 140 000 MT" data-imagem="Produtos/Smartphone/Huawei Mate 50.jpg">
+  <img src="../produtos/smartphone/OnePlus 12 Pro.jpg">
+  <h3>Huawei Mate 50</h3>
+  <div class="preco">≈ 140 000 MT</div>
+  <div class="quantidade" data-quantidade="70">Qtd: 70</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Xiaomi 13 Pro" data-preco="≈ 145 000 MT" data-imagem="Produtos/Smartphone/Xiaomi 13 Pro.jpg">
+  <img src="../produtos/smartphone/Xiaomi 14 Ultra.webp">
+  <h3>Xiaomi 13 Pro</h3>
+  <div class="preco">≈ 145 000 MT</div>
+  <div class="quantidade" data-quantidade="80">Qtd: 80</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Xiaomi 13" data-preco="≈ 130 000 MT" data-imagem="Produtos/Smartphone/Xiaomi 13.jpg">
+  <img src="../produtos/smartphone/Xiaomi 17 Pro.jpg">
+  <h3>Xiaomi 13</h3>
+  <div class="preco">≈ 130 000 MT</div>
+  <div class="quantidade" data-quantidade="90">Qtd: 90</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="iPhone 14 Pro Max" data-preco="≈ 170 000 MT" data-imagem="Produtos/Smartphone/iPhone 14 Pro Max.jpg">
+  <img src="../produtos/smartphone/I17N.jpg">
+  <h3>iPhone 14 Pro Max</h3>
+  <div class="preco">≈ 170 000 MT</div>
+  <div class="quantidade" data-quantidade="75">Qtd: 75</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Samsung Galaxy Z Fold 5" data-preco="≈ 210 000 MT" data-imagem="Produtos/Smartphone/Samsung Galaxy Z Fold 5.jpg">
+  <img src="../produtos/smartphone/ZFold.jpg">
+  <h3>Samsung Galaxy Z Fold 5</h3>
+  <div class="preco">≈ 210 000 MT</div>
+  <div class="quantidade" data-quantidade="40">Qtd: 40</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Huawei P60 Pro" data-preco="≈ 150 000 MT" data-imagem="Produtos/Smartphone/Huawei P60 Pro.jpg">
+  <img src="../produtos/smartphone/OnePlus 12 Pro.png">
+  <h3>Huawei P60 Pro</h3>
+  <div class="preco">≈ 150 000 MT</div>
+  <div class="quantidade" data-quantidade="65">Qtd: 65</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+
+<div class="card-produto" data-nome="Xiaomi Mix Fold 3" data-preco="≈ 180 000 MT" data-imagem="Produtos/Smartphone/Xiaomi Mix Fold 3.jpg">
+  <img src="../produtos/smartphone/ZFold26.jpg">
+  <h3>Xiaomi Mix Fold 3</h3>
+  <div class="preco">≈ 180 000 MT</div>
+  <div class="quantidade" data-quantidade="50">Qtd: 50</div>
+  <button class="btn-comprar-card"><i class="fa-solid fa-cart-arrow-down"></i> Comprar</button>
+</div>
+  </div>
+</section>
+
+<!--------------------------- AREA DO CADASTRO --------------------------->
+  <div class="popup-auth" id="popupAuth">
+    <div class="auth-container">
+      <div class="auth-overlay" id="authOverlay">
+        <div class="overlay-content">
+          <h2 id="overlayTitle">Bem-vindo!</h2>
+          <p id="overlayText">Ainda não tens conta?</p>
+          <button id="toggleAuth">Registrar</button>
+        </div>
+      </div>
+
+      <div class="auth-box login-box">
+        <h2>Entrar</h2>
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Palavra-passe">
+        <button>Login</button>
+        <p>ou entrar com:</p>
+        <button class="btn-google"><i class="fab fa-google"></i> Google</button>
+      </div>
+
+      <div class="auth-box register-box">
+        <h2>Registrar</h2>
+        <input type="text" placeholder="Nome Completo">
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Palavra-passe">
+        <input type="password" placeholder="Confirmar senha">
+        <button>Criar Conta</button>
+        <p>ou registar com:</p>
+        <button class="btn-google"><i class="fab fa-google"></i> Google</button>
+      </div>
+    </div>
+  </div>
+
+<!--------------------------- AREA NEWSLETTER --------------------------->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+
+    <div class="newsletter-text">
+      <h2>Newsletter NexStore</h2>
+      <p class="subtitle">
+        Conecte-se ao futuro com tecnologia inovadora
+      </p>
+      <p class="desc">
+        Receba ofertas, novidades e produtos exclusivos diretamente no seu e-mail.
+      </p>
+    </div>
+
+    <div class="newsletter-form">
+      <input type="email" placeholder="Insira o seu e-mail">
+      <button>INSCREVER-SE</button>
+
+      <label class="terms">
+        <input type="checkbox">
+        Concordo com os <a href="#">Termos e Condições</a>
+      </label>
+    </div>
+
+  </div>
+</section>
+
+<!-------------- AREA BACKTOTOP -------------->
+<button class="backToTop">
+  <svg class="progress-circle" width="40" height="40">
+    <circle cx="20" cy="20" r="18"></circle>
+    <circle cx="20" cy="20" r="18"></circle>
+  </svg>
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!--------------------------- AREA FOOTER --------------------------->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-sobre">
+      <img src="../logotipo/Logo04.png" class="footer-logo">
+      <p>
+        A NexStore é a sua loja online de tecnologia, onde você explora tudo ao seu gosto. Oferecemos os melhores produtos
+        com garantia, qualidade, inovação e entrega segura em qualquer ponto de Moçambique.
+      </p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/nexstore"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/nexstore"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/nexstore"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/nexstore"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-pages">
+      <h3>Links Rápidos</h3>
+      <ul>
+        <li><a href="../paginas/contactos.html">Contactos</a></li>
+        <li><a href="../paginas/produtos.html">Produtos</a></li>
+        <li><a href="../paginas/servicos.html">Serviços</a></li>
+        <li><a href="../paginas/sobre-nos.html">Sobre Nós</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-categorias">
+      <h3>Categorias</h3>
+      <ul>
+        <li><a href="../paginas/eletrodomesticos.html">Eletronicos</a></li>
+        <li><a href="../paginas/smartphone.html">Smartphones</a></li>
+        <li><a href="../paginas/laptop.html">Laptops</a></li>
+        <li><a href="../paginas/headset.html">Headsets</a></li>
+        <li><a href="../paginas/desktop.html">Desktops</a></li>
+        <li><a href="../paginas/smartwatch.html">SmartWatchs</a></li>
+      </ul>
+    </div>
+
+    <div class="contactos-footer">
+      <h3>Contactos</h3>
+      <div class="footer-item">
+        <i class="fas fa-phone"></i>
+        <div class="footer-info">
+          <p><a href="tel:+258846686990">+258 846686990</a></p>
+          <p><a href="tel:+258876686990">+258 876686990</a></p>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <i class="fas fa-envelope"></i>
+        <div class="footer-info">
+          <p><a href="mailto:contacto@nexstore.co.mz">contacto@nexstore.co.mz</a></p>
+          <p><a href="mailto:suporte@nexstore.co.mz">suporte@nexstore.co.mz</a></p>
+        </div>
+      </div>
+
+      <div class="footer-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="footer-info">
+          <p>Baixa da Cidade, Maputo</p>
+          <p>Moçambique</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Copyright ©2026 <a href="../index.html">NexStore</a> | Todos os Direitos Reservados.</p>
+  </div>
+</footer>
+<!--------------------------- JAVASCRIPT --------------------------->
+  <script src="../js/script.js"></script>
+  <script src="../js/carinha.js"></script>
+  <script src="../js/pesquisar.js"></script>
+  <script src="../js/backToTop.js"></script>
+  <script src="../js/smarthead.js"></script>
+  <script src="../ js/auth.js"></script>
+  <script src="../js/cookies.js"></script>
+  <script src="frontend/backend/server.js"></script>
+  <script src="frontend/backend/config/db.js"></script>
+  <script src="frontend/backend/controllers/authController.js"></script>
+  <script src="frontend/backend/routes/authRoutes.js"></script>
+</body>
+</html>

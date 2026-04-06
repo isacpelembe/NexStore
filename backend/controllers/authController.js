@@ -1,7 +1,7 @@
 const db = require('../config/db');
 const bcrypt = require('bcryptjs');
 
-// Cadastro com email/senha
+/*------------------------ CADASTRO COM EMAIL E SENHA ------------------------*/
 exports.register = async (req, res) => {
   const { name, email, password } = req.body;
   if(!name || !email || !password) return res.status(400).send('Preencha todos os campos');
@@ -18,7 +18,7 @@ exports.register = async (req, res) => {
     });
 };
 
-// Login com email/senha
+/*------------------------ LOGIN COM EMAIL E SENHA ------------------------*/
 exports.login = (req, res) => {
   const { email, password } = req.body;
   if(!email || !password) return res.status(400).send('Preencha todos os campos');

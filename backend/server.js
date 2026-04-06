@@ -1,3 +1,4 @@
+/*------------------------ AREA DO SERVIDOR LOCAL ------------------------*/
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -9,7 +10,6 @@ const db = require('./config/db');
 
 const app = express();
 
-// Middlewares
 app.use(cors({ origin: 'http://localhost:5500', credentials: true }));
 app.use(bodyParser.json());
 app.use(session({ secret: 'segredo', resave: false, saveUninitialized: true }));
@@ -17,7 +17,7 @@ app.use(session({ secret: 'segredo', resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Passport Google OAuth
+/*------------------------ AUTENTICAÇÃO COM GOOGLE ------------------------*/
 passport.use(new GoogleStrategy({
   clientID: '847555578116-nf66t2i8db373kirk2d8i1h2j6rpc80s.apps.googleusercontent.com',
   clientSecret: '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',
@@ -29,7 +29,7 @@ passport.use(new GoogleStrategy({
 
     if(results.length > 0) return done(null, results[0]);
 
-    // Se não existir, cria usuário no DB
+/*------------------------ CRIAR USUÁRIO NO BANCO DE DADOS ------------------------*/
     db.query('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', 
       [profile.displayName, profile.emails[0].value, ''], (err, result) => {
         if(err) return done(err);
@@ -45,8 +45,8 @@ passport.deserializeUser((id, done) => {
   db.query('SELECT * FROM users WHERE id = ?', [id], (err, results) => done(err, results[0]));
 });
 
-// Rotas
+/*------------------------ ROTAS DE AUTENTICAÇÃO ------------------------*/
 app.use('/auth', authRoutes);
 
-// Servidor
+/*------------------------ SERVER ------------------------*/
 app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
